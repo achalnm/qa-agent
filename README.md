@@ -32,7 +32,7 @@ Live URL: Previously deployed on Google Cloud Run during the Google Cloud Gen AI
 Health check.
 
 ```bash
-curl https://YOUR_CLOUD_RUN_URL/
+curl http://localhost:8080/
 ```
 
 Response:
@@ -46,7 +46,7 @@ Response:
 Accepts a context passage and a question. Returns the agent's answer and how long the agent took to respond.
 
 ```bash
-curl -X POST https://YOUR_CLOUD_RUN_URL/ask \
+curl -X POST http://localhost:8080/ask \
   -H "Content-Type: application/json" \
   -d '{
     "context": "The Eiffel Tower was completed in 1889 and stands 330 metres tall.",
@@ -76,7 +76,7 @@ Errors return HTTP 400 with an `error` field explaining what is wrong.
 Returns three hardcoded examples showing what the agent can do. Useful for testing and for reading the API docs.
 
 ```bash
-curl https://YOUR_CLOUD_RUN_URL/examples
+curl http://localhost:8080/examples
 ```
 
 Response includes a medical example, a historical example, and a technical example, each with a context, question, and sample answer.
